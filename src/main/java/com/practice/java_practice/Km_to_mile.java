@@ -14,7 +14,6 @@ public class Km_to_mile {
 	public static void main(String[] args) {
 		Scanner sc = new Scanner(System.in);
 		int kilometer = sc.nextInt();
-		log.debug(sc.hasNextInt());
 		log.debug(kilometer * 0.621371);
 	}
 }
