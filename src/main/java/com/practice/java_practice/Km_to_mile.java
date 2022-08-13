@@ -14,6 +14,7 @@ public class Km_to_mile {
 	public static void main(String[] args) {
 		Scanner sc = new Scanner(System.in);
 		int kilometer = sc.nextInt();
+		//amresh
 		log.debug(kilometer * 0.621371);
 	}
 }
