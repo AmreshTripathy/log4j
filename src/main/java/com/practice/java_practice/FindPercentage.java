@@ -18,6 +18,7 @@ public class FindPercentage {
 			log.debug("Insert No."+i);
 			sum += sc.nextInt();
 		}
+		String a;
 		float percent = (sum * 100) / 500;
 		log.debug("Percentage is "+ percent);
 	}
