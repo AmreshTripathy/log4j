@@ -1,8 +1,15 @@
+package com.practice.kunalkhuswah_DSA;
+
+import java.util.ArrayList;
+import java.util.HashMap;
+import java.util.Map;
+import java.util.Scanner;
+
 class FirstUniqueCharacter {
 	
 	protected static Scanner sc = new Scanner(System.in);
 	
-	public int firstUniqChar(String s) {
+	public static int firstUniqChar(String s) {
         	Map<Character, Integer> map = new HashMap<Character, Integer>();
         	ArrayList<Character> lis = new ArrayList<Character>();
         	for(int i = 0; i < s.length(); i++) {
