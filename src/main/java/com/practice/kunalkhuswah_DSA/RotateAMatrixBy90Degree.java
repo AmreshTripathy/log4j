@@ -17,6 +17,12 @@ public class RotateAMatrixBy90Degree {
 				matrix[i][j] = sc.nextInt();
 			}
 		}
+		for(int i = 0; i< n; i++) {
+			for(int j = 0; j < n; j++) {
+				System.out.print(matrix[i][j]+" ");
+			}
+			System.out.println();
+		}
 		
 		matrix = rotateBy90(matrix, n);
 		
