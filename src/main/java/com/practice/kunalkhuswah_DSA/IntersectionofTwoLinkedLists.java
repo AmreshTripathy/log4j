@@ -31,7 +31,7 @@ public class IntersectionofTwoLinkedLists {
 		while(temp1 != null){
 			Node temp2 = headB;
 			while(temp2 != null){
-				if(temp1.data == temp2.data){
+				if(temp1 == temp2){
 					return temp2;
 				}
 				temp2 = temp2.next;
