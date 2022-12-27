@@ -11,7 +11,7 @@ public class DesignBrowserHistory {
         Scanner sc = new Scanner(System.in);
         String homepage = sc.nextLine();
         int n = sc.nextInt();
-//        sc.nextLine();
+        sc.nextLine();
         BrowserHistory browserHistory = new BrowserHistory(homepage);
         for(int i = 0; i < n; i++) {
             String q = sc.nextLine();
