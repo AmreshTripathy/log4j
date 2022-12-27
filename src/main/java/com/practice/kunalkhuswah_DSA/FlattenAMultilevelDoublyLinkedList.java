@@ -80,7 +80,6 @@ public class FlattenAMultilevelDoublyLinkedList {
 		if(head.next != null) head.next.prev = head;
 		
 		head.child = null;
-		
 		return head;
     }
 }
