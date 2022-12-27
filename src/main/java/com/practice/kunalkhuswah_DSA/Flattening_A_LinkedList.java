@@ -87,7 +87,7 @@ public class Flattening_A_LinkedList {
 			prev2.down = null;
 			ll.right = new Node(-1);
 			prev1 = ll;
-			ll = ll.right;
+			ll = ll.right; 
 		}
 		sc.close();
 		prev1.right = null;
