@@ -1,4 +1,4 @@
-package www.linkedin;
+package com.practice.kunalkhuswah_DSA;
 /*
  * @Amresh Tripathy
  */

@@ -1,6 +1,7 @@
 package com.practice.kunalkhuswah_DSA;
 
 import java.util.Arrays;
+import java.util.HashSet;
 import java.util.Scanner;
 
 /*
@@ -9,34 +10,48 @@ import java.util.Scanner;
 
 public class SecondLargestInteger {
 	protected static Scanner sc = new Scanner(System.in);
+
 	public static void main(String[] args) {
-		int[] arr = new int[5];
-		
-		for(int i = 0; i < 5; i++) {
+		int n = sc.nextInt();
+		int[] arr = new int[n];
+
+		for (int i = 0; i < n; i++) {
 			arr[i] = sc.nextInt();
 		}
-		
+
 		Arrays.sort(arr);
-		
-		removeDuplicates(arr, 5);
+
+		System.out.println(removeDuplicates(arr, n));
 	}
-	private static void removeDuplicates(int[] arr, int n) {
-		if(n==1 || n==0)
-			System.out.println(arr[n-1]);
-		
-		int count =0;
-		int[] temp = new int[n];
-		
-		for(int i = 0; i< n; i++) {
-			if(i+1 < n && arr[i] == arr[i+1]) {
-				temp[count] = arr[i];
-				i++;
-				count++;
-			}else {
-				temp[count] = arr[i];
-				count++;
+
+	private static int removeDuplicates(int[] arr, int n) {
+		if(n == 0)
+			return 0;
+//
+//		HashSet<Integer> set = new HashSet<Integer>();
+//		int count = 0;
+//		int[] temp = new int[n];
+//
+//		for (int i = 0; i < n; i++) {
+//			if (i + 1 < n && arr[i] == arr[i + 1] && !set.contains(arr[i])) {
+//				temp[count] = arr[i];
+//				set.add(arr[i]);
+//				i++;
+//				count++;
+//			} else {
+//				if (!set.contains(arr[i])) {
+//					temp[count] = arr[i];
+//					set.add(arr[i]);
+//					count++;
+//				}
+//			}
+//		}
+//		System.out.println(temp[count - 2]);
+		for (int i = n - 2; i >= 0; i--) {
+			if (arr[i] < arr[n - 1]) {
+				return arr[i];
 			}
 		}
-		System.out.println(temp[count-2]);
+		return arr[n - 1];
 	}
 }

@@ -12,7 +12,7 @@ public class ArmstrongNumber {
 	public static void main(String[] args) {
 		int num = sc.nextInt();
 		int num1 = num;
-		double sum = 0;
+		int sum = 0;
 		
 		while(num1>0) {
 			sum += Math.pow(num1%10, 3);

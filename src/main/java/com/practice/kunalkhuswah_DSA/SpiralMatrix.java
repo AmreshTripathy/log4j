@@ -30,7 +30,6 @@ public class SpiralMatrix {
 		int left = 0, top = 0, right = m - 1, bottom = n - 1;
 		int target = matrix.length * matrix[0].length;
 		int count = 0;
-//		ArrayList<Integer> lis = new ArrayList<Integer>();
 
 		while (left <= right && top <= bottom) {
 			for (int i = left; i <= right && count < target; i++) {
@@ -57,6 +56,5 @@ public class SpiralMatrix {
 			}
 			left++;
 		}
-//		System.out.println(Arrays.toString(lis.toArray()).replace("[", "").replace("]", ""));
 	}
 }

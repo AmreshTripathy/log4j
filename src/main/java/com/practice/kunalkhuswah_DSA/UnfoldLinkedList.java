@@ -33,16 +33,17 @@ public class UnfoldLinkedList {
 		Node odd_index = new Node(-1);
 		Node odd = odd_index;
 		
+		Node temp = head;
 		int index = 0;
-		while(head != null) {
+		while(temp != null) {
 			if(index % 2 == 0) {
-				even_index.next = new Node(head.data);
+				even_index.next = new Node(temp.data);
 				even_index = even_index.next;
 			}else {
-				odd_index.next = new Node(head.data);
+				odd_index.next = new Node(temp.data);
 				odd_index = odd_index.next;
 			}
-			head = head.next;
+			temp = temp.next;
 			index++;
 		}
 		

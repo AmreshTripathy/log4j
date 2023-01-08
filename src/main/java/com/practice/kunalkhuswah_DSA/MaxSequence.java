@@ -2,6 +2,7 @@ package com.practice.kunalkhuswah_DSA;
 
 import java.util.Arrays;
 import java.util.HashMap;
+import java.util.Map.Entry;
 import java.util.Scanner;
 
 /*
@@ -24,32 +25,26 @@ public class MaxSequence {
 	
 	public static int sequence(int[] arr, int n) {
 		
-		int count = 1;
-		
 		HashMap<Integer, Integer> map = new HashMap<Integer, Integer>();
-		Arrays.sort(arr);
 		for(int i = 0; i < n; i++) {
-			for(int j = i+1; j < n; j++) {
-				if(arr[i] == arr[j]) {
-					count++;
-				}
-			}
-			if(!map.containsKey(arr[i])) {
-				map.put(arr[i], count);
-			}
-			count = 1;
-		}
-		
-		int max = 0;
-		int number = 0;
-		
-		for(int i = 0; i < n; i++) {
-			if(map.get(arr[i]) > max) {
-				max = map.get(arr[i]);
-				number = arr[i];
+			if(map.containsKey(arr[i])) {
+				map.put(arr[i], map.get(arr[i])+1);
+			}else {
+				map.put(arr[i], 1);
 			}
 		}
 		
-		return number;
+		int max_count = 0, res = -1;
+        
+        for(Entry<Integer, Integer> val : map.entrySet())
+        {
+            if (max_count < val.getValue())
+            {
+                res = val.getKey();
+                max_count = val.getValue();
+            }
+        }
+         
+        return res;
 	}
 }

@@ -50,6 +50,16 @@ public class RomanInteger {
 	}
 	
 	public static void main(String[] args) {
-		System.out.println(romanToInt(sc.next()));
+		int t = sc.nextInt();
+
+        int[] arr = new int[t];
+        
+        for(int i = 0; i < t; i++){
+        	arr[i] = romanToInt(sc.next());
+        }
+        
+        for(int i = 0; i < t; i++) {
+        	System.out.print(arr[i] + " ");
+        }
 	}
 }

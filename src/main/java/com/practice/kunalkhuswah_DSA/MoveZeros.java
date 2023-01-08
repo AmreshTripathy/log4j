@@ -9,17 +9,21 @@ import java.util.Scanner;
 
 public class MoveZeros {
 	protected static Scanner sc = new Scanner(System.in);
+
 	public static void main(String[] args) {
 		int n = sc.nextInt();
-		
+
 		int[] nums = new int[n];
-		for(int i = 0; i < n; i++)
+		for (int i = 0; i < n; i++)
 			nums[i] = sc.nextInt();
-		
-		moveZeroes(nums);
+
+		nums = moveZeroes(nums, n);
+
+		for (int i = 0; i < n; i++)
+			System.out.print(nums[i] + " ");
 	}
-	
-	public static void moveZeroes(int[] nums) {
+
+	public static int[] moveZeroes(int[] nums, int n) {
         int[] arr = new int[nums.length];
         int count = 0;
         for(int i = 0; i < nums.length; i++){
@@ -29,8 +33,8 @@ public class MoveZeros {
             }
         }
         
-        nums = arr;
+        return arr;
         
-        System.out.println(Arrays.toString(nums).replace(" ", ""));
-    }
+//        System.out.println(Arrays.toString(nums).replace(" ", ""));
+	}
 }

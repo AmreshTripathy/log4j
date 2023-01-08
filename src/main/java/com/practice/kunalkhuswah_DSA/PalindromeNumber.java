@@ -19,7 +19,18 @@ public class PalindromeNumber {
 		}else {
 			System.out.println(false);
 		}
-		
+//		int N = sc.nextInt();
+//		int n1 = N;
+//        int num = 0;
+//        while(N > 0){
+//            num = (num * 10) + (N % 10);
+//            N /= 10;
+//        }
+//        if(N == num){
+//        	System.out.println(true);
+//        }else {
+//        	System.out.println(false);
+//        }
 
 	}
 }

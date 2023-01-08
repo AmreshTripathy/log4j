@@ -21,7 +21,7 @@ public class LargestHistogramArea_Optimized {
 
 	private static long maximumArea(long[] arr, long n) {
 
-		long area = 1;
+		long area = 0;
 
 		long[] leftLength = leftIndexOf(arr, (int) n); // finding left side index upto which element is great or equal
 		long[] rightLength = rightIndexOf(arr, (int) n); // // finding right side index upto which element is great or equal
