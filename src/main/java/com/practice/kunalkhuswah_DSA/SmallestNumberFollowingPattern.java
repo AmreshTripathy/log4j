@@ -5,6 +5,7 @@ import java.util.Stack;
 
 /*
  * @Amresh Tripathy
+ * https://course.acciojob.com/idle?question=efcb1e58-c615-48b1-a7ed-def039965808
  */
 
 public class SmallestNumberFollowingPattern {
