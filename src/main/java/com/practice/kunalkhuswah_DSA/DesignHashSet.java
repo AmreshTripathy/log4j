@@ -34,11 +34,11 @@ class Solution2 {
 		
 		int i = hashFunction(key);
 		
-		if(hashTable[i] == null || hashTable[i].indexOf(key) == -1)
+		if(hashTable[i] == null)
 			return;
 		
 		if(hashTable[i].indexOf(key) != -1)
-			hashTable[i].remove(key);
+			hashTable[i].remove(hashTable[i].indexOf(key));
 	}
 
 	public boolean contains(int key) {
