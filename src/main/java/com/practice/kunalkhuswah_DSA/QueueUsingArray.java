@@ -7,10 +7,10 @@ package com.practice.kunalkhuswah_DSA;
 import java.util.ArrayList;
 import java.util.Scanner;
 
-class Queue {
+class Queue2 {
 
 	ArrayList<Integer> que;
-    public Queue() {
+    public Queue2() {
         que = new ArrayList<Integer>();
     }
 
@@ -33,7 +33,7 @@ class Queue {
 public class QueueUsingArray {
     public static void main(String[] args) {
         Scanner sc = new Scanner(System.in);
-        Queue q = new Queue();
+        Queue2 q = new Queue2();
         int n = sc.nextInt();
         for(int i = 0; i < n; i++) {
             int op = sc.nextInt();
