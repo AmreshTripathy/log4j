@@ -12,7 +12,7 @@ import java.util.Scanner;
 public class ImplementStackUsingQueuePushO1 {
     public static void main(String[] args) {
         Scanner sc = new Scanner(System.in);
-        Stack g = new Stack();
+        Stack1 g = new Stack1();
         int q = sc.nextInt();
         while (q > 0) {
             int QueryType = sc.nextInt();
@@ -28,10 +28,10 @@ public class ImplementStackUsingQueuePushO1 {
     }
 }
 
-class Stack
+class Stack1
 {
     Queue<Integer> que1;
-    Stack() {  que1 = new LinkedList<>(); }
+    Stack1() {  que1 = new LinkedList<>(); }
     void push(int a)
     {
         if(que1.isEmpty() == false) {
