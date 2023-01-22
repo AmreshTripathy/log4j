@@ -1,12 +1,10 @@
 package com.practice.kunalkhuswah_DSA;
-
-import java.util.Arrays;
-import java.util.List;
-import java.util.Scanner;
-
 /*
  * @Amresh Tripathy
+ * https://leetcode.com/problems/search-insert-position/description/
  */
+
+import java.util.Scanner;
 
 public class SerachInsertPosition {
 	protected static Scanner sc = new Scanner(System.in);
@@ -17,23 +15,19 @@ public class SerachInsertPosition {
 		System.out.println(searchInsert(arr, sc.nextInt()));
 	}
 	private static int searchInsert(int[] nums, int k) {
-		for(int i = 0; i < nums.length; i++) {
-            if(nums[i] == k) {
-            	return i;
-            }
+		int lo = 0;
+        int hi = nums.length - 1;
+
+        while (lo <= hi) {
+            int mid = (lo + hi) / 2;
+            if(nums[mid] == k)
+                return mid;
+            else if(nums[mid] < k)
+                lo = mid + 1;
+            else
+                hi = mid - 1;
         }
-		Arrays.sort(nums);
-		List<Integer> lis = Arrays.stream(nums).boxed().toList();
-		
-		if(k < lis.get(0)) {
-			return 0;
-		}
-		
-		int count = k-1;
-		while(!lis.contains(count)) {
-			count--;
-		}
-		
-		return lis.indexOf(count) + 1;
+		// if it's unable to find the k element then we remove the lo index
+        return lo;
 	}
 }
