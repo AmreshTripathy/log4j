@@ -2,6 +2,7 @@ package com.practice.kunalkhuswah_DSA;
 /*
  * @Amresh Tripathy
  * https://course.acciojob.com/idle?question=629217db-7ed5-4c49-9aff-ed7ecbd251af
+ * https://leetcode.com/problems/find-minimum-in-rotated-sorted-array/
  */
 
 import java.util.Scanner;
@@ -18,13 +19,16 @@ public class FindMinimumInRotatedSortedArray {
     }
 
     private static int findMin(int arr[], int low, int high) {
+
+        if(arr[low] < arr[high])
+            return arr[low];
         
         while (low <= high) {
             int mid = (low + high) / 2;
 
             if (arr[mid] > arr[mid + 1])
                 return arr[mid + 1];
-            else if (arr[mid  - 1] > arr[mid])
+            else if (arr[mid - 1] > arr[mid])
                 return arr[mid];
             else if(arr[low] <= arr[mid]) // checking wheher the left side array is sorted or not
                 low = mid + 1;
