@@ -20,7 +20,7 @@ public class FindMinimumInRotatedSortedArray {
 
     private static int findMin(int arr[], int low, int high) {
 
-        if(arr[low] < arr[high])
+        if(arr[low] <= arr[high])
             return arr[low];
         
         while (low <= high) {
