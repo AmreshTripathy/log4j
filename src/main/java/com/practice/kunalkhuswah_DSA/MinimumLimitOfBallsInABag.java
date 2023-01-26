@@ -34,7 +34,7 @@ public class MinimumLimitOfBallsInABag {
         while (lo <= hi) {
             int mid = (lo + hi) / 2;
 
-            if(isPossible(n, arr, m, mid) == true) {
+            if(isPossible(n, arr, mid, m) == true) {
                 res = mid;
                 hi = mid - 1;
             }else
@@ -44,9 +44,17 @@ public class MinimumLimitOfBallsInABag {
         return res;
     }
 
-    private static boolean isPossible(int n, int[] arr, int m, int mid) {
-        int currOpOpt = 0;
-        // hello fadff njand
-        return false;
+    private static boolean isPossible(int n, int[] arr, int limit, int maxOpt) {
+        int currOpt = 0;
+
+        for (int i = 0; i < n; i++) {
+            int curBalls = arr[i];
+            int divider = arr[i] / limit;
+            if(curBalls % limit == 0)
+                divider--;
+            currOpt += divider;
+        }
+
+        return currOpt <= maxOpt;
     }
 }
