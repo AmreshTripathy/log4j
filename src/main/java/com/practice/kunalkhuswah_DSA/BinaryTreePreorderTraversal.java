@@ -6,8 +6,6 @@ package com.practice.kunalkhuswah_DSA;
 
 import java.util.Scanner;
 
-import com.practice.kunalkhuswah_DSA.BinaryTrees.Node;
-
 public class BinaryTreePreorderTraversal {
     public static void main(String[] args) {
         Scanner sc = new Scanner(System.in);
@@ -20,7 +18,7 @@ public class BinaryTreePreorderTraversal {
         preorderTraversal(bst.root);
     }
 
-    private static void preorderTraversal(Node root) {
+    private static void preorderTraversal(TreeNode root) {
         if (root == null)
             return;
         System.out.print(root.data + " ");

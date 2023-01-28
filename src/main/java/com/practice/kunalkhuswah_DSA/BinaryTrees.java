@@ -6,38 +6,38 @@ package com.practice.kunalkhuswah_DSA;
 import java.util.LinkedList;
 import java.util.Queue;
 
+class TreeNode {
+    int data;
+    TreeNode left;
+    TreeNode right;
+
+    TreeNode(String data) {
+        this.data = Integer.parseInt(data);
+        this.left = null;
+        this.right = null;
+    }
+}
+
 public class BinaryTrees {
 
-    static class Node {
-        int data;
-        Node left;
-        Node right;
-
-        Node(String data) {
-            this.data = Integer.parseInt(data);
-            this.left = null;
-            this.right = null;
-        }
-    }
-
-    Node root = null;
+    TreeNode root = null;
 
     BinaryTrees(String[] arr) {
         if(arr.length == 0 || arr[0].equals("N"))
             return;
         
-        root = new Node(arr[0]);
-        Queue<Node> q = new LinkedList<>();
+        root = new TreeNode(arr[0]);
+        Queue<TreeNode> q = new LinkedList<>();
         q.add(root);
         int i = 1;
 
         while (q.size() > 0 && i < arr.length) {
-            Node curNode = q.peek();
+            TreeNode curNode = q.peek();
             q.remove();
 
             String curVal = arr[i];
             if(!curVal.equals("N")) {
-                curNode.left = new Node(curVal);
+                curNode.left = new TreeNode(curVal);
                 q.add(curNode.left);
             }
             i++;
@@ -46,7 +46,7 @@ public class BinaryTrees {
                 break;
             curVal = arr[i];
             if(!curVal.equals("N")) {
-                curNode.right = new Node(curVal);
+                curNode.right = new TreeNode(curVal);
                 q.add(curNode.right);
             }
             i++;
