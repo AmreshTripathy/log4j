@@ -1,7 +1,5 @@
 package com.practice.kunalkhuswah_DSA;
 
-import java.util.HashMap;
-import java.util.Map;
 import java.util.Scanner;
 
 /*
