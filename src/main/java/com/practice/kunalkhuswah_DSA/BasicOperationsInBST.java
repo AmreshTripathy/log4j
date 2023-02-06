@@ -19,6 +19,7 @@ public class BasicOperationsInBST {
         sc.close();
 
         t.inOrderPrint(t.root);
+        System.out.println();
         int size = size(t.root);
         int sum = sum(t.root);
         int max = max(t.root);
