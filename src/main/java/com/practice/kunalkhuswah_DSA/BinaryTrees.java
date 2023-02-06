@@ -11,8 +11,8 @@ class TreeNode {
     TreeNode left;
     TreeNode right;
 
-    TreeNode(String data) {
-        this.data = Integer.parseInt(data);
+    TreeNode(int data) {
+        this.data = data;
         this.left = null;
         this.right = null;
     }
@@ -26,7 +26,7 @@ public class BinaryTrees {
         if(arr.length == 0 || arr[0].equals("N"))
             return;
         
-        root = new TreeNode(arr[0]);
+        root = new TreeNode(Integer.parseInt(arr[0]));
         Queue<TreeNode> q = new LinkedList<>();
         q.add(root);
         int i = 1;
@@ -37,7 +37,7 @@ public class BinaryTrees {
 
             String curVal = arr[i];
             if(!curVal.equals("N")) {
-                curNode.left = new TreeNode(curVal);
+                curNode.left = new TreeNode(Integer.parseInt(curVal));
                 q.add(curNode.left);
             }
             i++;
@@ -46,7 +46,7 @@ public class BinaryTrees {
                 break;
             curVal = arr[i];
             if(!curVal.equals("N")) {
-                curNode.right = new TreeNode(curVal);
+                curNode.right = new TreeNode(Integer.parseInt(curVal));
                 q.add(curNode.right);
             }
             i++;

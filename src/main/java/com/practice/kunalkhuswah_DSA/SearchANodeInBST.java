@@ -24,7 +24,7 @@ public class SearchANodeInBST {
         System.out.println(searchNode(t.root, k));
     }
 
-    private static boolean searchNode(BST_Node root, int k) {
+    private static boolean searchNode(TreeNode root, int k) {
         if (root == null)
             return false;
 

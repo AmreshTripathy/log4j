@@ -3,32 +3,20 @@ package com.practice.kunalkhuswah_DSA;
  * @Amresh Tripathy
  */
 
-class BST_Node {
-    int data;
-    BST_Node left;
-    BST_Node right;
-
-    BST_Node(int data) {
-        this.data = data;
-        this.left = null;
-        this.right = null;
-    }
-}
-
 public class BST {
-    BST_Node root = null;
+    TreeNode root = null;
 
     BST() {
 
     }
 
-    BST(BST_Node root) {
+    BST(TreeNode root) {
         this.root = root;
     }
 
-    BST_Node insert(BST_Node root, int data) {
+    TreeNode insert(TreeNode root, int data) {
         if (root == null) {
-            root = new BST_Node(data);
+            root = new TreeNode(data);
             return root;
         }
 
@@ -42,7 +30,7 @@ public class BST {
         return root;
     }
 
-    void preOrderPrint(BST_Node root) {
+    void preOrderPrint(TreeNode root) {
         if (root == null)
             return;
 
@@ -52,7 +40,7 @@ public class BST {
         preOrderPrint(root.right);
     }
 
-    void inOrderPrint(BST_Node root) {
+    void inOrderPrint(TreeNode root) {
         if (root == null)
             return;
 

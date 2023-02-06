@@ -28,7 +28,7 @@ public class LowestCommonAncestor {
 
         int i = 0, j =  0;
 
-        TreeNode lca = new TreeNode("-1");
+        TreeNode lca = new TreeNode(-1);
         
         while(i < lis1.size() && j < lis2.size() && lis1.get(i) == lis2.get(i)) {
             lca = lis1.get(i);

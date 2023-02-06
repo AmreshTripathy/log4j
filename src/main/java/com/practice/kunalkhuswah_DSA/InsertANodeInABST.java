@@ -24,9 +24,9 @@ public class InsertANodeInABST {
         t.inOrderPrint(t.root);
     }
 
-    private static BST_Node insertNode(BST_Node root, int val) {
+    private static TreeNode insertNode(TreeNode root, int val) {
         if(root == null) {
-			return new BST_Node(val);
+			return new TreeNode(val);
 		}
 		if(root.data == val)
 			return root;
