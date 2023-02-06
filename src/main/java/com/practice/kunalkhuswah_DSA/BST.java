@@ -42,13 +42,22 @@ public class BST {
         return root;
     }
 
-    void print(BST_Node root) {
+    void preOrderPrint(BST_Node root) {
         if (root == null)
             return;
 
         System.out.print(root.data + " ");
 
-        print(root.left);
-        print(root.right);
+        preOrderPrint(root.left);
+        preOrderPrint(root.right);
+    }
+
+    void inOrderPrint(BST_Node root) {
+        if (root == null)
+            return;
+
+        inOrderPrint(root.left);
+        System.out.print(root.data + " ");
+        inOrderPrint(root.right);
     }
 }

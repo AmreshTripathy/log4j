@@ -8,7 +8,7 @@ import java.util.Scanner;
 
 public class SearchANodeInBST {
     public static void main(String[] args) {
-        
+
         Scanner sc = new Scanner(System.in);
         int n = sc.nextInt();
         int k = sc.nextInt();
@@ -19,7 +19,7 @@ public class SearchANodeInBST {
 
         sc.close();
 
-        t.print(t.root);
+        t.preOrderPrint(t.root);
         System.out.println();
         System.out.println(searchNode(t.root, k));
     }
