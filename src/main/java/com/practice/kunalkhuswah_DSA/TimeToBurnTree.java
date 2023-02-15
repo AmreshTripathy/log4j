@@ -4,8 +4,10 @@ package com.practice.kunalkhuswah_DSA;
  * https://course.acciojob.com/idle?question=83be7387-e686-464e-8c8a-be5a00bf4a37
  */
 
+import java.util.ArrayList;
 import java.util.HashMap;
 import java.util.LinkedList;
+import java.util.List;
 import java.util.Map;
 import java.util.Queue;
 import java.util.Scanner;
@@ -40,27 +42,32 @@ public class TimeToBurnTree {
 
         addParent(root, map);
 
-        TreeNode start = findNode(root, k);
+        TreeNode[] start = new TreeNode[1];
+        start[0] = null;
+        findNode(root, k, start);
 
         Queue<Pair> q = new LinkedList<>();
-        q.add(new Pair(start, 0));
+        q.add(new Pair(start[0], 0));
 
+        List<TreeNode> burned = new ArrayList<>();
+        
         while (q.size() > 0) {
             int size = q.size();
 
             while (size > 0) {
                 Pair temp = q.remove();
                 ans = temp.time;
+                burned.add(temp.node);
 
-                if (map.containsKey(temp.node)) {
+                if (map.containsKey(temp.node) && burned.contains(map.get(temp.node)) == false) {
                     q.add(new Pair(map.get(temp.node), temp.time + 1));
                 }
 
-                if (temp.node.left != null) {
+                if (temp.node.left != null && burned.contains(temp.node.left) == false) {
                     q.add(new Pair(temp.node.left, temp.time + 1));
                 }
 
-                if (temp.node.right != null) {
+                if (temp.node.right != null && burned.contains(temp.node.right) == false) {
                     q.add(new Pair(temp.node.right, temp.time + 1));
                 }
 
@@ -71,23 +78,23 @@ public class TimeToBurnTree {
         return ans;
     }
 
-    private static TreeNode findNode(TreeNode root, int k) {
+    private static void findNode(TreeNode root, int k, TreeNode[] start) {
         if(root == null)
-            return null;
+            return;
 
-        if(root.data == k)
-            return root;
+        if(root.data == k) {
+            start[0] = root;
+            return;
+        }
         
-        findNode(root.left, k);
-        findNode(root.right, k);
-
-        return null;
+        findNode(root.left, k, start);
+        findNode(root.right, k, start);
     }
 
     private static void addParent(TreeNode root, Map<TreeNode, TreeNode> map) {
         if(root == null)
             return;
-            
+
         if(root.left != null) {
             map.put(root.left, root);
             addParent(root.left, map);
