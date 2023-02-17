@@ -3,6 +3,9 @@ package com.practice.kunalkhuswah_DSA;
  * @Amresh Tripathy
  */
 
+import java.util.LinkedList;
+import java.util.Queue;
+
 public class BST {
     TreeNode root = null;
 
@@ -47,5 +50,21 @@ public class BST {
         inOrderPrint(root.left);
         System.out.print(root.data + " ");
         inOrderPrint(root.right);
+    }
+
+    void levelOrder(TreeNode root) {
+        if (root == null)
+            return;
+        Queue<TreeNode> q = new LinkedList<>();
+        q.add(root);
+        while (!q.isEmpty()) {
+            TreeNode f = q.poll();
+            System.out.print(f.data + " ");
+            if (f.left != null)
+                q.add(f.left);
+            if (f.right != null)
+                q.add(f.right);
+        }
+        System.out.println();
     }
 }
