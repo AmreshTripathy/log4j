@@ -70,6 +70,55 @@ public class MinimumWindowSubstring {
         s = sc.next();
         t = sc.next();
         sc.close();
-        System.out.print(minWindow(s, t));
+        System.out.println(minWindow(s, t));
+        System.out.println(minWindow_slidingWindow(s, t));
+    }
+
+    private static String minWindow_slidingWindow(String s, String t) {
+        int sp = 0;
+        int ep = 0;
+
+        int[] currentWindowFrequency = new int[130];
+        int[] tFrequency = new int[130];
+
+        // this is the original start and end point
+        int osp = -1;
+        int oep = -1;
+        int ansSize = Integer.MAX_VALUE;
+
+        // calaculating the frequency of t string
+        for (int i = 0; i < t.length(); i++)
+            tFrequency[t.charAt(i)]++;
+
+        // sliding window
+        while (ep < s.length()) {
+            // we visit end point here and increase the frequency
+            currentWindowFrequency[s.charAt(ep)]++;
+
+            while (allCharactersPresent(tFrequency, currentWindowFrequency)) {
+                if (ep - sp + 1 < ansSize) {
+                    ansSize = ep - sp + 1;
+                    osp = sp;
+                    oep = ep;
+                }
+
+                currentWindowFrequency[s.charAt(sp)]--;
+                sp++;
+            }
+
+            ep++;
+        }
+
+        return (osp == -1) ? "" : s.substring(osp, oep + 1);
+    }
+
+    private static boolean allCharactersPresent(int[] tFrequency, int[] currentWindowFrequency) {
+
+        for (int i = 0; i < tFrequency.length; i++) {
+            if(tFrequency[i] > currentWindowFrequency[i])
+                return false;
+        }
+
+        return true;
     }
 }
