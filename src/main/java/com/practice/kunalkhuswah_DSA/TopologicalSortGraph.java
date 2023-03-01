@@ -1,6 +1,7 @@
 package com.practice.kunalkhuswah_DSA;
 
 import java.util.ArrayList;
+import java.util.Collections;
 import java.util.List;
 import java.util.Scanner;
 import java.util.Stack;
@@ -45,6 +46,7 @@ public class TopologicalSortGraph {
         while (st.size() > 0)
             lis.add(st.pop());
         
+        Collections.reverse(lis);
         System.out.println(lis);
         
     }
