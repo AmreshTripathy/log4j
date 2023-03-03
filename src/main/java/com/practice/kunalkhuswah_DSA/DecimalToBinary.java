@@ -27,7 +27,7 @@ public class DecimalToBinary {
                 ans += '0';
             N >>= 1;
         }
-
+        ans = (new StringBuilder(ans)).reverse().toString();
         System.out.println(ans);
 	}
 }
