@@ -6,18 +6,6 @@ package com.practice.kunalkhuswah_DSA;
 import java.util.LinkedList;
 import java.util.Queue;
 
-class TreeNode {
-    int data;
-    TreeNode left;
-    TreeNode right;
-
-    TreeNode(int data) {
-        this.data = data;
-        this.left = null;
-        this.right = null;
-    }
-}
-
 public class BinaryTrees {
 
     TreeNode root = null;

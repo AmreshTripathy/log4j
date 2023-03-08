@@ -7,9 +7,9 @@ import java.util.LinkedList;
 import java.util.Queue;
 
 public class BST {
-    TreeNode root = null;
+    public TreeNode root = null;
 
-    BST() {
+    public BST() {
 
     }
 
@@ -17,7 +17,7 @@ public class BST {
         this.root = root;
     }
 
-    TreeNode insert(TreeNode root, int data) {
+    public TreeNode insert(TreeNode root, int data) {
         if (root == null) {
             root = new TreeNode(data);
             return root;
@@ -33,7 +33,7 @@ public class BST {
         return root;
     }
 
-    void preOrderPrint(TreeNode root) {
+    public void preOrderPrint(TreeNode root) {
         if (root == null)
             return;
 
@@ -43,7 +43,7 @@ public class BST {
         preOrderPrint(root.right);
     }
 
-    void inOrderPrint(TreeNode root) {
+    public void inOrderPrint(TreeNode root) {
         if (root == null)
             return;
 
@@ -52,7 +52,7 @@ public class BST {
         inOrderPrint(root.right);
     }
 
-    void levelOrder(TreeNode root) {
+    public void levelOrder(TreeNode root) {
         if (root == null)
             return;
         Queue<TreeNode> q = new LinkedList<>();
