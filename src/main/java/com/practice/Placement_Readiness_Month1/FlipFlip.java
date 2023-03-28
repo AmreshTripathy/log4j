@@ -20,7 +20,7 @@ public class FlipFlip {
     }
 
     private static int flipFlip(int n, int[] arr, int k) {
-        System.out.println("");
+        System.out.println("amresh");
         return 0;
     }
 }
