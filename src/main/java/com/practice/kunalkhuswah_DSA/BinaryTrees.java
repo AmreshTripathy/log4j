@@ -8,9 +8,9 @@ import java.util.Queue;
 
 public class BinaryTrees {
 
-    TreeNode root = null;
+    public TreeNode root = null;
 
-    BinaryTrees(String[] arr) {
+    public BinaryTrees(String[] arr) {
         if(arr.length == 0 || arr[0].equals("N"))
             return;
         
