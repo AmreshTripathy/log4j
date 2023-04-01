@@ -27,7 +27,7 @@ public class NetworkDelayTime {
         sc.close();
         System.out.println(networkDelayTime(times, n, k));
     }
-    
+
     static class Pair {
         int node;
         int cost;
@@ -43,18 +43,18 @@ public class NetworkDelayTime {
             return a.cost - b.cost;
         });
 
-        LinkedList<List<Integer>> adj[] = new LinkedList[n+1];
-        for(int i=0;i<=n;i++)
+        LinkedList<List<Integer>> adj[] = new LinkedList[n + 1];
+        for (int i = 0; i <= n; i++)
             adj[i] = new LinkedList<>();
 
-        for(int i=0;i<times.length;i++){
-            int u,v,w;
+        for (int i = 0; i < times.length; i++) {
+            int u, v, w;
             u = times[i][0];
             v = times[i][1];
             w = times[i][2];
-            adj[u].add(Arrays.asList(v,w));
+            adj[u].add(Arrays.asList(v, w));
         }
-		
+
         pq.add(new Pair(k, 0));
         boolean[] visited = new boolean[n + 1];
         int ans = 0;
@@ -69,7 +69,7 @@ public class NetworkDelayTime {
 
             ans = curr.cost;
 
-            for (List<Integer> edge: adj[curr.node]) {
+            for (List<Integer> edge : adj[curr.node]) {
                 int nbr = edge.get(0);
                 int wt = edge.get(1);
 
@@ -80,8 +80,8 @@ public class NetworkDelayTime {
         }
 
         for (int i = 1; i <= n; i++)
-                if (visited[i] == false)
-                    return -1;
+            if (visited[i] == false)
+                return -1;
 
         return ans;
     }
