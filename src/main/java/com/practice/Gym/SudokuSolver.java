@@ -72,7 +72,7 @@ public class SudokuSolver {
         for (int row = 0; row < 9; row++) {
             for (int col = 0; col < 9; col++) {
                 if (board[row][col] == '.') {
-                    for (char i = '0'; i < '9'; i++) {
+                    for (char i = '1'; i <= '9'; i++) {
                         // checking 3 test cases
                         // 1 - row, 2 - col, 3 - is present in 3 x 3 matrix
                         if (isValid(board, row, col, i)) {
