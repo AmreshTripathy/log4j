@@ -1,0 +1,17 @@
+{
+    "fileHeaderComment.parameter":{
+        "*":{
+            "commentbegin": "/*",
+            "commentprefix": " *",
+            "commentend": " */",
+        }
+    },
+    "fileHeaderComment.template":{
+        "*":[
+            "${commentbegin}",
+            "${commentprefix} @Amresh Tripathy",
+            "${commentend}"
+        ]
+    },
+    "java.debug.settings.onBuildFailureProceed": true
+}
