@@ -3,25 +3,10 @@ package com.practice.kunalkhuswah_DSA;
  * @Amresh Tripathy
  */
 
-class Node {
-	int data;
-	Node next;
+public class LinkedLists {
+	public Node head;
 
-	Node assign(Node node) {
-		Node temp;
-		temp = node;
-		return temp;
-	}
-
-	Node(int data) {
-		this.data = data;
-	}
-}
-
-class LinkedLists {
-	Node head;
-
-	void addNode(int data) {
+	public void addNode(int data) {
 		Node newNode = new Node(data);
 		if (head == null) {
 			head = newNode;
@@ -35,7 +20,7 @@ class LinkedLists {
 		}
 	}
 
-	void print() {
+	public void print() {
 		Node temp = head;
 		while (temp.next != null) {
 			System.out.print(temp.data + " ");
