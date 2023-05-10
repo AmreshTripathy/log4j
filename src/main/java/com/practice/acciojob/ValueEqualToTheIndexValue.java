@@ -15,6 +15,7 @@ public class ValueEqualToTheIndexValue {
 			arr[i] = sc.nextInt();
 
 		indexValue(arr, n);
+		sc.close();
 	}
 
 	private static void indexValue(int[] arr, int n) {
