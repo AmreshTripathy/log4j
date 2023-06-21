@@ -36,8 +36,10 @@ public class IceCreamParlor {
         for (int i = 0; i < n; i++) {
             for (int j = i + 1; j < n; j++) {
                 if (cost[i] + cost[j] == m) {
+
                     System.out.println((i + 1) + " " + (j + 1));
                     break;
+                    
                 }
             }
         }
